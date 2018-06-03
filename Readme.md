@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Анна Дорофеева](https://up.htmlacademy.ru/javascript/14/user/471839).
-* Наставник: `Неизвестно`.
+* Наставник: `Анастасия Шевченко (https://htmlacademy.ru/profile/id125164)`.
 
 ---
 
