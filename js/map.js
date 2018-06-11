@@ -1,48 +1,69 @@
 'use strict'
 
-var advertisements = [{
-			autor = {
-				avatar: ['img/avatars/user01.png',
-					'img/avatars/user02.png',
-					'img/avatars/user03.png',
-					'img/avatars/user04.png',
-					'img/avatars/user05.png',
-					'img/avatars/user06.png',
-					'img/avatars/user07.png',
-					'img/avatars/user08.png'
-				]
-			},
-			{
-				offer = {
-					title: ['Большая уютная квартира',
-						'Маленькая неуютная квартира',
-						'Огромный прекрасный дворец',
-						'Маленький ужасный дворец',
-						'Красивый гостевой домик',
-						'Некрасивый негостеприимный домик',
-						'Уютное бунгало далеко от моря',
-						'Неуютное бунгало по колено в воде'
-					]
+var avatars = ['img/avatars/user01.png',
+	'img/avatars/user02.png',
+	'img/avatars/user03.png',
+	'img/avatars/user04.png',
+	'img/avatars/user05.png',
+	'img/avatars/user06.png',
+	'img/avatars/user07.png',
+	'img/avatars/user08.png'
+];
+
+var titles = ['Большая уютная квартира',
+	'Маленькая неуютная квартира',
+	'Огромный прекрасный дворец',
+	'Маленький ужасный дворец',
+	'Красивый гостевой домик',
+	'Некрасивый негостеприимный домик',
+	'Уютное бунгало далеко от моря',
+	'Неуютное бунгало по колено в воде'
+];
+var types = [palace, flat, house, bungalo];
+var checkin = ['12:00', '13:00', '14:00'];
+var checkout = ['12:00', '13:00', '14:00'];
+var features = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
+photos: ['http://o0.github.io/assets/images/tokyo/hotel1.jpg',
+	'http://o0.github.io/assets/images/tokyo/hotel2.jpg',
+	'http://o0.github.io/assets/images/tokyo/hotel3.jpg'
+];
+var rooms = [1, 5];
+var guests = [50];
+
+var getRandomNumber = function(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var getRandomElement = function(array) {
+	var element = array[Math.floor(Math.random() * array.length)];
+	return element;
+}
+
+
+var ADVERTISMENT_COUNT = 8;
+var createAdvertisments = function() {
+	var advertismentsArr = [];
+	for (var i = 0; i < ADVERTISMENT_COUNT; i++) {
+		var randomAdvertisment = {
+			autor: getRandomElement(avatar),
+			offer: {
+				title: getRandomElement(titles),
+				adress: {
+					locationX: getRandomNumber(300, 900),
+					locationY: getRandomNumber(130, 630)
 				},
-				{
-					address: '100, 200',
-					price: ,
-					type: [palace, flat, house, bungalo],
-					rooms: [1, 5],
-					guests: ,
-					checkin: ['12:00', '13:00', '14:00'],
-					checkout: ['12:00', '13:00', '14:00'],
-					features: ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'],
-					description: '';
-					photos: ['http://o0.github.io/assets/images/tokyo/hotel1.jpg',
-						'http://o0.github.io/assets/images/tokyo/hotel2.jpg'
-						'http://o0.github.io/assets/images/tokyo/hotel3.jpg'
-					]
-				},
-				{
-					location = {
-						x: [300, 900],
-						y: [130, 360]
-					}
-				}
-			];
+				price: getRandomNumber(1000, 1000000),
+				tipe: getRandomElement(types),
+				rooms: getRandomElement(rooms),
+				guests: getRandomNumber(1, 50),
+				checkin: getRandomElement(checkin),
+				checkout: getRandomElement(checkout),
+				features: getRandomElement(features),
+				description: '',
+				photos: getRandomElement(photos),
+			}
+		}
+		advertismentsArr.push(randomAdvertisment);
+	}
+	return advertismentsArr;
+}
