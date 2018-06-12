@@ -39,6 +39,9 @@ var getRandomElement = function(array) {
 	return element;
 }
 
+var deletRandomElement = function(array) {
+	var deleteElement = array.pop()
+}
 
 var ADVERTISMENT_COUNT = 8;
 var createAdvertisments = function() {
@@ -48,22 +51,31 @@ var createAdvertisments = function() {
 			autor: getRandomElement(avatar),
 			offer: {
 				title: getRandomElement(titles),
-				adress: {
+				titles.pop(title);
+				location: {
 					locationX: getRandomNumber(300, 900),
 					locationY: getRandomNumber(130, 630)
 				},
+				adress: {
+					locationX + ','
+					locationY
+				},
 				price: getRandomNumber(1000, 1000000),
-				tipe: getRandomElement(types),
-				rooms: getRandomElement(rooms),
+				type: getRandomElement(types),
+				rooms: getRandomNumber(1, 5),
 				guests: getRandomNumber(1, 50),
 				checkin: getRandomElement(checkin),
 				checkout: getRandomElement(checkout),
 				features: getRandomElement(features),
 				description: '',
 				photos: getRandomElement(photos),
+
 			}
 		}
 		advertismentsArr.push(randomAdvertisment);
 	}
+	console.log(advertismentsArr);
 	return advertismentsArr;
 }
+
+createAdvertisments();
